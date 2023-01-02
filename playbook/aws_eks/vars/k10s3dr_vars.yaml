@@ -1,0 +1,9 @@
+aws_access_key_id: "AAAAAAAAAAAAAAAAAAAA" #AWS Access Key ID
+aws_secret_access_key: "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"  #AWS Secret Access Key
+bucket_name: "Bucket Name"  #Name of the AWS S3 Bucket
+profile_name: "Location Profile" #Name of the Location Profile in Kasten
+region: "eu-west-3"  #Bucket Region when applicable
+passphrase: "mysuperpassword" #Passphrase is set when enabling K10 DR feature
+clusterid: "aaaaaaaaa-eeee-dddd-cccc-bbbbbbbbb"  #Cluster ID can be got from K10 DR Settings
+secret_name: "k10-s3-secret"  #Name of the secret to be created with AWS Keys
+LOGIN: "admin:$apr1$aaaaaaaaaaaaaa.pY/bbbbbbbbbbbb/"  #For K10 Basic Authentication.  Use 'htpasswd -n admin' and provide a password to autenticate to Kasten K10

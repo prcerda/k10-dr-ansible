@@ -1,0 +1,11 @@
+tenantID: "aaaaaaaa-431b-bbbb-add7-123456789012"  #Azure Tenant ID
+azureclientID: "aaaaaaaaaaaaaaaaaaaaaaaaaaaa" #Azure Client ID
+Azureclientsecret: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" # Azure Client Secret
+azure_storage_key: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"  #Azure Storage Access Key 
+azure_storage_env: "AzureCloud"  #AzureCloud is the default in Azure.  More info in https://docs.kasten.io/latest/usage/configuration.html#azure-storage
+bucket_name: "Bucket Name"  #Name of the Azure Blob Storage
+profile_name: "Location Profile" #Name of the Location Profile in Kasten
+passphrase: "mysuperpassword" #Passphrase used when enabling Kasten DR feature
+clusterid: "aaaaaaaaa-eeee-dddd-cccc-bbbbbbbbb" #Cluster ID can be got from K10 DR Settings
+secret_name: "k10-azsa-secret" #Name of the secret to be created with Azure Client secret
+LOGIN: "admin:$apr1$aaaaaaaaaaaaaa.pY/bbbbbbbbbbbb/" #For K10 Basic Authentication.  Use 'htpasswd -n admin' and provide a password to autenticate to Kasten K10

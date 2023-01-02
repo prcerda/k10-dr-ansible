@@ -1,0 +1,16 @@
+---
+- name: Kasten K10 Restore configuration from Disaster Recovery backup
+  hosts: localhost
+  vars:
+    k10_ns: "kasten-io"  
+  vars_files:
+    - vars/k10aksdr_vars.yaml    
+  collections:
+    - kubernetes.core
+    
+  tasks:
+    - name: create location profile with DR backup
+      include_tasks: k10dr/dr_locprofile.yaml      
+    - name: restore Kasten DR Backup
+      include_tasks: k10dr/dr_restorek10.yaml
+      

@@ -1,0 +1,43 @@
+---
+- name: K10 Deploy
+  hosts: localhost
+  vars_files:
+    - vars/k10aksdr_vars.yaml 
+  vars:
+    helm_chart_url: "https://charts.kasten.io/"
+  collections:
+    - kubernetes.core
+  tasks:
+# Creating the namespace in the kubernete cluster
+    - name: Create Kasten K10 namespace
+      k8s:
+        name: kasten-io # defining the namespace
+        api_version: v1
+        kind: Namespace
+        state: present
+# Adding Helm repository for Kasten K10
+    - name: Add Kasten helm repo
+      kubernetes.core.helm_repository:
+        name: kasten
+        state: present
+        repo_url: '{{ helm_chart_url }}'
+      register: helmrepo
+# Installin Kasten K10 for AWS EKS
+    - name: Install Kasten K10 chart
+      kubernetes.core.helm:
+        name: k10
+        namespace: kasten-io
+        chart_ref: kasten/k10
+        wait: True
+        state: present
+        values:
+            secrets:
+                azureTenantId: "{{ tenantID }}"
+                azureClientId: "{{ azureclientID }}"
+                azureClientSecret: "{{ Azureclientsecret }}"
+            externalGateway:
+                create: true
+            auth:
+                basicAuth:
+                    enabled: true
+                    htpasswd: "{{ LOGIN }}"
