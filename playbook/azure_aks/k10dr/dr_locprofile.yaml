@@ -37,6 +37,6 @@
             type: ObjectStore
             objectStore:
               name: "{{ bucket_name }}"
-              objectStoreType: Azure
+              objectStoreType: AZ
 
  
