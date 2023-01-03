@@ -127,9 +127,9 @@ The Deployment consists thre main playbook triggering multible tasks:
 	- Finally the playbook restore every application from the most recent restore point found in previous step.
 
 All these playbooks are available for all three Kubernetes deployments mentioned before:
-1. [AWS EKS](aws_eks/)
-1. [Azure AKS](azure_aks/)
-1. [Google Cloud GKE](google_gke/)
+1. [AWS EKS](playbook/aws_eks/)
+1. [Azure AKS](playbook/azure_aks/)
+1. [Google Cloud GKE](playbook/google_gke/)
 
 Important: The playbooks must be run in the mentioned order in order to make the recovery process works.
 
