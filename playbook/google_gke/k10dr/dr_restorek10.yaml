@@ -21,4 +21,4 @@
     values:
         sourceClusterID: "{{ clusterid }}"
         profile:
-            name: "{{ bucket_name }}"
+            name: "{{ profile_name }}"

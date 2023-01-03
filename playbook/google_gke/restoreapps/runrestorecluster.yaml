@@ -6,11 +6,6 @@
 - name: "restore cluster resources"
   kubernetes.core.k8s:
     state: present
-    wait: true
-    wait_condition:
-      type: Complete
-      status: True
-      reason: RestoreCompleted
     definition: 
         apiVersion: actions.kio.kasten.io/v1alpha1
         kind: RestoreClusterAction
